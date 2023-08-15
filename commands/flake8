@@ -1,1 +1,3 @@
 flake8 ./
+
+79 is the default line length of characters. - tox.ini

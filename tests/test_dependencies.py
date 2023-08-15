@@ -6,7 +6,9 @@ from ds_lib.utils import find_python_version
 # this is just dummy test case
 
 
-@pytest.mark.skip(reason="This is just to check parameterize - not implemented in real scenario")
+@pytest.mark.skip(
+    reason="This is just to check parameterize -\
+              not implemented in real scenario")
 @pytest.mark.parametrize(
     "version_input, expected_version",
     [
@@ -22,7 +24,8 @@ def test_python_versions(version_input, expected_version):
     assert (lambda: "v" + version_input)() == expected_version
 
 
-# test case to test if we are in the latest 3.12 version which is still in release candidate 1
+# test case to test if we are in the latest 3.12 version which
+# is still in release candidate 1
 @pytest.mark.xfail  # expected fail is not used 3.12
 def test_python_version():
     assert find_python_version() == "3.12"

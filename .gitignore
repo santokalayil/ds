@@ -89,3 +89,4 @@ target/
 data/
 
 .temp/
+.pytest_cache/
