@@ -1,0 +1,1 @@
+poetry env use $(pyenv which python)  # this command helps to create new virtual environment based on the global python used by pyenv

@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "ds"
+version = "0.1.0"
+description = "Data Science Project Structure Basic"
+authors = ["Santo K Thomas <santokalayil@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ds_lib"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "^1.0.0"
+click = "^8.1.6"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.1"
+flake8 = "^6.1.0"
+autopep8 = "^2.0.2"
+pytest = "^7.4.0"
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,44 @@
+name: DS Project Test
+on:
+    pull_request:
+        branches: main
+    push:
+        branches: main
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        defaults: 
+            run: 
+                working-directory: ./
+        strategy:
+            matrix:
+                python-version: [3.9, "3.10", 3.11]
+        steps:
+            - uses: actions/checkout@v3
+            - name: Setup python
+              uses: actions/setup-python@v4
+              with: 
+                python-version: ${{ matrix.python-version }}
+            - name: Install dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r ./requirements/requirements.txt
+            
+            - name: Install develpment dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r ./requirements/requirements-dev.txt
+        
+            - name: Checking sys paths and current working dir
+              run: |
+                python -c "import sys; print(sys.path); print(100 * '=')"
+                python -c "import os; print(os.getcwd())"
+                python -c "print('Folder Contents'); import os; print(os.listdir(os.getcwd()))"
+            
+            # - name: Flake8 check
+            #   run: |
+            #       flake8 ./
+                
+            - name: Testing code with Pytest
+              run: |
+                pytest tests/

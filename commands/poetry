@@ -1,0 +1,5 @@
+# adding developmental dependencies
+poetry install flake8 --group dev 
+
+# this command helps to create new virtual environment based on the global python used by pyenv
+poetry env use $(pyenv which python)  
