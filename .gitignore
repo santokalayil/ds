@@ -90,3 +90,4 @@ data/
 
 .temp/
 .pytest_cache/
+dotnet-install.sh
