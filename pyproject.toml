@@ -7,9 +7,18 @@ readme = "README.md"
 packages = [{include = "ds_lib"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+# python = "^3.10"
+# python = ">=3.10,<3.13"
+python = ">=3.10,<3.11"
 python-dotenv = "^1.0.0"
 click = "^8.1.6"
+scipy = "^1.11.2"
+psycopg2-binary = "^2.9.7"
+pandas = {version = ">=2.0.0", extras = ["clipboard", "compression", "computation", "excel", "feather", "fss", "hdf5", "html", "output-formatting", "parquet", "performance", "plot", "spss", "test", "xml"]}
+ydata-profiling = "^4.5.1"
+streamlit = "^1.25.0"
+dash = "^2.12.1"
+xlsx2csv = "^0.8.1"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.25.1"
